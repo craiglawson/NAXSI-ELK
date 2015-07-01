@@ -1,0 +1,3 @@
+NGX_ERR_DATE_TIME %{YEAR}/%{MONTHNUM}/%{MONTHDAY} %{TIME}
+
+NGINXNAXSI_EXLOG %{NGX_ERR_DATE_TIME} \[%{LOGLEVEL}\] %{POSINT:PID}#%{POSINT:TID}: \*%{POSINT:CID} NAXSI_EXLOG: ip=%{IPV4:ClientIP}&server=%{HOSTNAME:request_host}&uri=%{URIPATH:request_path}&id=%{NUMBER:RuleID}&zone=%{WORD:MatchZone}&var_name=(%{WORD:Variable})?&content=(%{NOTSPACE:Content})?, client: %{IPV4}, server: %{HOSTNAME}, request: "%{WORD:Verb} %{URIPATHPARAM:request_path_param} HTTP/%{NUMBER:http_version}", host: "%{HOSTNAME}", referrer: "%{URI:referrer}"
