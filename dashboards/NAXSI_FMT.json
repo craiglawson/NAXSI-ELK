@@ -5,12 +5,12 @@
       "list": {
         "4": {
           "id": 4,
-          "color": "#7EB26D",
-          "alias": "FILE_EXT",
-          "pin": false,
+          "color": "#1F78C1",
+          "alias": "NAXSI_FMT",
+          "pin": true,
           "type": "lucene",
           "enable": true,
-          "query": "*"
+          "query": "LogType:NAXSI_FMT"
         }
       },
       "ids": [
@@ -28,20 +28,10 @@
           "active": true,
           "alias": "",
           "id": 0
-        },
-        "1": {
-          "type": "field",
-          "field": "LogType",
-          "query": "\"NAXSI_FMT\"",
-          "mandate": "must",
-          "active": true,
-          "alias": "",
-          "id": 1
         }
       },
       "ids": [
-        0,
-        1
+        0
       ]
     }
   },
@@ -208,6 +198,7 @@
       "query": "*",
       "pinned": true,
       "history": [
+        "LogType:NAXSI_FMT",
         "*",
         "MatchZone: \"FILE_EXT\"",
         "MatchZone: \"ARGS\"",
@@ -216,8 +207,7 @@
         "MatchZone: \"HEADERS\"",
         "@MatchZone: \"BODY\"",
         "@message:\"NAXSI_FMT\"",
-        "@message:!NAXSI_FMT\"",
-        "@message:NAXSI_FMT"
+        "@message:!NAXSI_FMT\""
       ],
       "remember": 10,
       "enable": true
