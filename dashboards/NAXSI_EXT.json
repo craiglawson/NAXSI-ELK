@@ -232,7 +232,7 @@
               4
             ]
           },
-          "field_list": false,
+          "field_list": true,
           "status": "Stable",
           "trimFactor": 300,
           "normTimes": true,
@@ -276,8 +276,8 @@
     },
     {
       "type": "filtering",
-      "collapse": true,
-      "notice": false,
+      "collapse": false,
+      "notice": true,
       "enable": true
     }
   ],
@@ -330,5 +330,5 @@
     "load_local": true,
     "hide": false
   },
-  "refresh": "5m"
+  "refresh": false
 }

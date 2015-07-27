@@ -6,11 +6,11 @@
         "4": {
           "id": 4,
           "color": "#7EB26D",
-          "alias": "NAXSI_FMT",
-          "pin": true,
+          "alias": "FILE_EXT",
+          "pin": false,
           "type": "lucene",
           "enable": true,
-          "query": "@Logtype=\"NAXSI_FMT\""
+          "query": "*"
         }
       },
       "ids": [
@@ -28,10 +28,20 @@
           "active": true,
           "alias": "",
           "id": 0
+        },
+        "1": {
+          "type": "field",
+          "field": "LogType",
+          "query": "\"NAXSI_FMT\"",
+          "mandate": "must",
+          "active": true,
+          "alias": "",
+          "id": 1
         }
       },
       "ids": [
-        0
+        0,
+        1
       ]
     }
   },
@@ -71,7 +81,7 @@
           "percentage": false,
           "interactive": true,
           "queries": {
-            "mode": "selected",
+            "mode": "all",
             "ids": [
               4
             ]
@@ -153,14 +163,9 @@
             "@timestamp",
             "request_host",
             "request_path",
-            "MatchZone",
-            "RuleID",
             "ClientIP",
             "learning_mode",
-            "naxsi_version",
-            "Verb",
-            "tags",
-            "LogType"
+            "naxsi_version"
           ],
           "localTime": true,
           "timeField": "@timestamp",
@@ -198,21 +203,21 @@
   "pulldowns": [
     {
       "type": "query",
-      "collapse": true,
+      "collapse": false,
       "notice": false,
       "query": "*",
       "pinned": true,
       "history": [
-        "@Logtype=\"NAXSI_FMT\"",
-        "tag: _grokparsefailure",
-        "Logtype=\"NAXSI_FMT\"",
-        "Logtype: \"NAXSI_FMT\"",
         "*",
         "MatchZone: \"FILE_EXT\"",
         "MatchZone: \"ARGS\"",
         "MatchZone: \"URL\"",
         "MatchZone: \"BODY\"",
-        "MatchZone: \"HEADERS\""
+        "MatchZone: \"HEADERS\"",
+        "@MatchZone: \"BODY\"",
+        "@message:\"NAXSI_FMT\"",
+        "@message:!NAXSI_FMT\"",
+        "@message:NAXSI_FMT"
       ],
       "remember": 10,
       "enable": true
@@ -273,5 +278,5 @@
     "load_local": true,
     "hide": false
   },
-  "refresh": "5m"
+  "refresh": false
 }
