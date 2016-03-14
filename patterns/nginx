@@ -10,6 +10,7 @@ NGINXERROR ^%{NGX_ERR_DATE_TIME:timestamp}  \[%{LOGLEVEL}\] %{POSINT:pid}#%{NUMB
 
 NGX_ERR_DATE_TIME %{YEAR}/%{MONTHNUM}/%{MONTHDAY} %{TIME}
 
+FMTVAR [^,]+
 NAXSI_FMT %{NGDATEX:logTimestampString} \[%{LOGLEVEL}\] %{NUMBER:PID}#%{NUMBER:TID}: \*%{NUMBER:CID} %{WORD:LogType}: ip=%{IPV4:ClientIP}&server=%{HOSTNAME:request_host}&uri=%{URIPATH:request_path}&learning=%{NUMBER:learning_mode}&vers=%{NUMBER:naxsi_version}&total_processed=%{NUMBER:total_processed}&total_blocked=%{NUMBER:total_blocked}&block=%{NUMBER:block}
 
 NAXSI_FMT_2 client: %{IPV4}, server: %{DATA:server_name}, request: "%{WORD:Verb} %{URIPATHPARAM:request_path_param} HTTP/%{NUMBER:http_version}", host: "%{HOSTNAME}"(;)?(, referrer: "%{URI:referrer}")?
